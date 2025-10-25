@@ -1,0 +1,109 @@
+<html lang="en">
+    <head>
+        <meta cahrset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Protfolio - Assignment2</title>
+        <link reak="stylesheet" href="css/styles.css" />
+        <meta name="describtion" content="Interactive portfolio demo for Assignment2"/>
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <h1 id="site-title">Abdulkader Alsamman</h1>
+                <nav class="nav">
+                    <button class="nav-btn" data-target="about">About</button>
+                    <button class="nav-btn" data-target="Projects">Projects</button>
+                    <button class="nav-btn" data-target="Contact">Contact</button>
+                </nav>
+                <div class="controls">
+                    <button id="theme-toggle" aria-pressed="false">Toggle Theme</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <section id="hero" class="card">
+                <div class="greeting">
+                    <h2 id="greeting-text">Hello!</h2>
+                    <p id="greeting-sub">Welcome to my interactive portfolio</p>
+                </div>
+                <div class="hero-actions">
+                    <label for="name-input">Tell me your name:</label>
+                    <input id="name-input" type="text" placeholder="Your name"/>
+                    <button id="save-name">Save</button>
+                    <button id="clear-name" class="secondary">Clear</button>
+                </div>
+
+            </section>
+            <section id="about" class="card hidden">
+                <h3>About Me</h3>
+                <p>Short bio - this is a place to introduce yourself. Use this project as a living portfolio.</p>
+            </section>
+            
+            <section id="projects" class="card hidden">
+                <div class="projects-header">
+                    <h3>Projects</h3>
+                    <div class="project-controls">
+                        <input id="search-projects" type="search" placeholder="Live search project..." aria-label="Search projects">
+                        <select id="filter-category" aria-label="Filter projects">
+                            <option value="all">All</option>
+                            <option value="web">Web</option>
+                            <option value="data">Data</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select id="sort-projects" aria-label="Sort projects">
+                            <option value="newest">Newest</option>
+                            <option value="title">Title</option>
+                        </select>
+                    </div>
+                </div>
+                <ul id="project-list" class="project-list" aria-live="polite">
+                    /////
+                </ul>
+                <div id="no-projects" class="empty-state hidden">No projects found.</div>
+            </section>
+
+            <section id="contact" class="card hidden">
+                <h3>Contact</h3>
+                <form id="contact-form" novalidate>
+                    <div class="form-row">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" required />
+                        <span class="error" id="err-name" aria-live="polite"></span>
+                    </div>
+                    <div class="form-row">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" required />
+                        <span class="error" id="err-email" aria-live="polite"></span>
+                    </div>
+                    <div class="form-row">
+                        <label for="contact-message">Meesage</label>
+                        <textarea id="contact-message" name="message" rows="4" required></textarea>
+                        <span class="error" id="err-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-row actions">
+                        <button type="submit">Submit</button>
+                        <button type="button" id="reset-form" class="secondary">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="external" class="card">
+                <h3>Random quote (from public API)</h3>
+                <div id="quote-area">
+                    <button id="fetch-quote">Load quote</button>
+                    <div id="quote-result" class="quote-result">Click the button to fetch a quote.</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p><span id="year"></span>Abdulkader Alsamman - Assignment 2 demo</p>
+            </div>
+        </footer>
+
+        <script src="js/script.js" defer></script>
+    </body>
+</html>
